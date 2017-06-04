@@ -1,3 +1,11 @@
+/*
+ * Descreiption: 分页插件
+ * Email: yaoli199@163.com
+ * Version: 0.0.1
+ * Author: Dolores
+ * Date: 2017-06-04
+ */
+
 function pageTemplate(opts){
 	var optsDefault = {pageNo:1, pageSize:10};
 	opts = opts ? opts : optsDefault;
