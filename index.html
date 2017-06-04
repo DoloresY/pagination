@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	.pagination{
+		clear: both;
+		margin: 0 auto;
+	}
+	a{
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		text-align: center;
+		line-height: 20px;
+		border: 1px solid #eee;
+		margin: 0 5px;
+		color: #666;
+		text-decoration: none;
+		font-size: 12px;
+	}
+	.selected{
+		color: #007EFF;
+		border-color: #007EFF;
+	}
+	.page_gray{
+		color: #ccc;
+		border-color: #eee;
+	}
+</style>
+</head>
+<body>
+	
+	<ul class='text'></ul>
+	
+	<div class="pagination" id="pagination"></div>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/pagination.js"></script>	
+<script>
+$(function(){
+	new pageTemplate({
+		pageNo: 1,		//当前页
+		pageSize: 1,	//当前页显示条数
+		pageStep: 10,   //当前可见最多页码个数
+		debug: true,	//调试true，实际false
+		url: "http://127.0.0.1:8020/myself/pagination/pagination/test.json", //调用接口url
+		insert: function(data){   //当前插入页面中显示内容
+			var content = "";
+			for(var i = 0; i < data.length; i++ ){
+				content += "<p>"+data[i].id+" : "+data[i].title+"</p>"
+			}
+			$(".text").html(content);
+		}
+	}).getList();
+})
+
+</script>
+</body>
+</html>
