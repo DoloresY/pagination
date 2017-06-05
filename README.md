@@ -13,8 +13,8 @@ pageNo: 1,		         //可配置当前页
 pageSize: 1,		         //当前页显示条数 
 pageStep: 10,		         //当前可见最多页码个数 
 debug: true,		         //调试true，实际false, ( 调试时请将项目放到本地站点下测试 )
-url: "test.json",		         //调用接口url
-insert: function(data){		         //可配置页面插入内容  data为接口返回数据  
+url: "test.json",		     //调用接口url
+insert: function(data){		     //可配置页面插入内容  data为接口返回数据  
   var content = "";
   for(var i = 0; i < data.length; i++ ){
     content += "&lt;p>"+data[i].id+" : "+data[i].title+"&lt;/p>";
